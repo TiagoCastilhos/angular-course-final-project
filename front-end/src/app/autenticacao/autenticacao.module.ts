@@ -8,6 +8,9 @@ import { AutenticacaoRoutingModule } from './autenticacao.routing';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomFormsModule } from 'ngx-custom-validators';
+
+import { AutenticacaoService } from './services/autenticacao.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
     AutenticacaoRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CustomFormsModule
+  ],
+  providers: [
+    AutenticacaoService
   ]
 })
 export class AutenticacaoModule { }
