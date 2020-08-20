@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomFormsModule } from 'ngx-custom-validators';
 
 import { AutenticacaoService } from './services/autenticacao.service';
+import { AutenticacaoGuard } from './services/guards/autenticacao.guard';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AutenticacaoService } from './services/autenticacao.service';
     CustomFormsModule
   ],
   providers: [
-    AutenticacaoService
+    AutenticacaoService,
+    AutenticacaoGuard
   ]
 })
 export class AutenticacaoModule { }

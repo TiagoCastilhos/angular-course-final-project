@@ -4,12 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AutenticacaoAppComponent } from "./autenticacao.app.component";
 import { CadastroComponent } from "./cadastro/cadastro.component";
 import { LoginComponent } from "./login/login.component";
+import { AutenticacaoGuard } from './services/guards/autenticacao.guard';
 
 const routes: Routes = [
     {
         path: '', component: AutenticacaoAppComponent, children: [
-            { path: 'cadastro', component: CadastroComponent },
-            { path: 'login', component: LoginComponent },
+            { path: 'cadastro', component: CadastroComponent, canActivate: [ AutenticacaoGuard ], canDeactivate: [ AutenticacaoGuard ] },
+            { path: 'login', component: LoginComponent, canActivate: [ AutenticacaoGuard ] },
         ]
     }
 ]
