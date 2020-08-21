@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'conta',
     loadChildren: () => import('./autenticacao/autenticacao.module').then(m => m.AutenticacaoModule)
   },
+  {
+    path: 'fornecedores',
+    loadChildren: () => import('./fornecedor/fornecedor.module').then(m => m.FornecedorModule)
+  },
   { path: '**', component: NotFoundComponent }
 ];
 

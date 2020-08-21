@@ -22,7 +22,7 @@ export class FornecedorService extends BaseService {
 
     obterTodos(): Observable<Fornecedor[]> {
         return this.http
-            .get<Fornecedor[]>(this.UrlServiceV1 + "fornecedores")
+            .get<Fornecedor[]>(this.urlServiceV1 + "fornecedores")
             .pipe(catchError(super.serviceError));
     }
 
