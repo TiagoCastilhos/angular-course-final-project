@@ -24,6 +24,7 @@
     "angular2-text-mask": "^9.0.0",
     "ng-brazil": "2.0.10",
     "ngx-custom-validators": "8.0.0",
+    "ngx-spinner": "^10.0.1",
     "ngx-toastr": "^13.0.0",
     "rxjs": "~6.5.5",
     "text-mask-addons": "^3.8.0",

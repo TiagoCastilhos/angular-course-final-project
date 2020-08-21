@@ -12,7 +12,9 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { FornecedorGuard } from './services/guards/fornecedor.guard';
+import { FornecedorResolve } from './services/fornecedor.resolve';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { FornecedorGuard } from './services/guards/fornecedor.guard';
     ReactiveFormsModule,
     HttpClientModule,
     NgBrazil,
-    TextMaskModule
+    TextMaskModule,
+    NgxSpinnerModule
   ],
   providers: [
     FornecedorService,
-    FornecedorGuard
+    FornecedorGuard,
+    FornecedorResolve
   ]
 })
 export class FornecedorModule { }
