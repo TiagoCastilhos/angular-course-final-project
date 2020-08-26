@@ -27,7 +27,8 @@
                 <div class="form-group">
                     <label class="control-label">Documento</label>
                     <div>
-                        <input class="form-control" id="documento" type="text" [placeholder]="textoDocumento" formControlName="documento" cpf [textMask]=" tipoFornecedorForm().value === '1' ? {mask: MASKS.cpf.textMask} : {mask: MASKS.cnpj.textMask}" [ngClass]="{'is-invalid': displayMessage.documento }" />
+                        <input class="form-control" id="documento" type="text" placeholder="{{ textoDocumento }}" formControlName="documento" [textMask]="tipoFornecedorForm().value === '1' ? {mask: MASKS.cpf.textMask} : {mask: MASKS.cnpj.textMask}" [ngClass]="{'is-invalid': displayMessage.documento }"
+                        />
 
                         <span class="text-danger" *ngIf="displayMessage.documento">
                             <p [innerHTML]="displayMessage.documento"></p>

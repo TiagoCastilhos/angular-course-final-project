@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DetalhesComponent } from './detalhes.component';
+import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 describe('DetalhesComponent', () => {
   let component: DetalhesComponent;
@@ -8,9 +10,10 @@ describe('DetalhesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetalhesComponent ]
+      declarations: [ DetalhesComponent ],
+      providers: [ ActivatedRoute, DomSanitizer ]
     })
-    .compileComponents();
+    .compileComponents(); 
   }));
 
   beforeEach(() => {

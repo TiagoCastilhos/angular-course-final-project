@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExcluirComponent } from './excluir.component';
+import { ProdutoService } from 'src/app/produto/services/produto.service';
+import { ProdutoServiceMock } from './../../produto/test/mocks/produto-service-mock';
 
 describe('ExcluirComponent', () => {
   let component: ExcluirComponent;
@@ -8,9 +10,12 @@ describe('ExcluirComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExcluirComponent ]
+      declarations: [ExcluirComponent],
+      providers: [
+        { provide: ProdutoService, useClass: ProdutoServiceMock }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,3 +28,4 @@ describe('ExcluirComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

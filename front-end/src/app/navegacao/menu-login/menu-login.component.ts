@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LocalStorage } from 'src/app/core/local-storage';
+import { LocalStorageUtils } from 'src/app/utils/localstorage';
 
 @Component({
   selector: 'app-menu-login',
@@ -11,7 +11,7 @@ export class MenuLoginComponent {
   token: string = "";
   user: any;
   email: string = "";
-  localStorageUtils = new LocalStorage();
+  localStorageUtils = new LocalStorageUtils();
 
   constructor(private router: Router) {  }
 

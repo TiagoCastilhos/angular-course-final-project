@@ -17,19 +17,19 @@ export class FornecedorService extends BaseService {
 
     obterTodos(): Observable<Fornecedor[]> {
         return this.http
-            .get<Fornecedor[]>(`${this.urlServiceV1}/fornecedores`)
+            .get<Fornecedor[]>(this.UrlServiceV1 + "fornecedores")
             .pipe(catchError(super.serviceError));
     }
 
     obterPorId(id: string): Observable<Fornecedor> {
         return this.http
-            .get<Fornecedor>(`${this.urlServiceV1}/fornecedores/${id}`, super.obterAuthHeaderJson())
+            .get<Fornecedor>(this.UrlServiceV1 + "fornecedores/" + id, super.ObterAuthHeaderJson())
             .pipe(catchError(super.serviceError));
     }
 
     novoFornecedor(fornecedor: Fornecedor): Observable<Fornecedor> {
         return this.http
-            .post(`${this.urlServiceV1}/fornecedores`, fornecedor, this.obterAuthHeaderJson())
+            .post(this.UrlServiceV1 + "fornecedores", fornecedor, this.ObterAuthHeaderJson())
             .pipe(
                 map(super.extractData),
                 catchError(super.serviceError));
@@ -37,7 +37,7 @@ export class FornecedorService extends BaseService {
 
     atualizarFornecedor(fornecedor: Fornecedor): Observable<Fornecedor> {
         return this.http
-            .put(`${this.urlServiceV1}/fornecedores/${fornecedor.id}`, fornecedor, super.obterAuthHeaderJson())
+            .put(this.UrlServiceV1 + "fornecedores/" + fornecedor.id, fornecedor, super.ObterAuthHeaderJson())
             .pipe(
                 map(super.extractData),
                 catchError(super.serviceError));
@@ -45,7 +45,7 @@ export class FornecedorService extends BaseService {
 
     excluirFornecedor(id: string): Observable<Fornecedor> {
         return this.http
-            .delete(`${this.urlServiceV1}/fornecedores/${id}`, super.obterAuthHeaderJson())
+            .delete(this.UrlServiceV1 + "fornecedores/" + id, super.ObterAuthHeaderJson())
             .pipe(
                 map(super.extractData),
                 catchError(super.serviceError));
@@ -53,7 +53,7 @@ export class FornecedorService extends BaseService {
 
     atualizarEndereco(endereco: Endereco): Observable<Endereco> {
         return this.http
-            .put(`${this.urlServiceV1}/fornecedores/endereco` + endereco.id, endereco, super.obterAuthHeaderJson())
+            .put(this.UrlServiceV1 + "fornecedores/endereco/" + endereco.id, endereco, super.ObterAuthHeaderJson())
             .pipe(
                 map(super.extractData),
                 catchError(super.serviceError));

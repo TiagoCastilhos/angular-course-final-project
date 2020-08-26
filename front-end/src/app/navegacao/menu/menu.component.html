@@ -6,7 +6,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngbCollapse]="isCollapsed">
-                
+
                 <app-menu-login></app-menu-login>
 
                 <ul class="navbar-nav flex-grow-1">
@@ -16,8 +16,8 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" [routerLink]="['/fornecedores/listar-todos']">Fornecedores</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Produtos</a>
+                    <li class=" nav-item ">
+                        <a class="nav-link text-dark " [routerLink]="['/produtos/listar-todos']">Produtos</a>
                     </li>
                 </ul>
             </div>
